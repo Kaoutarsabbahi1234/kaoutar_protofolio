@@ -5,8 +5,8 @@ export const AboutSection = () => {
   const handleDownloadCV = () => {
     // Créer un lien temporaire pour le téléchargement
     const link = document.createElement('a');
-    link.href = '/CV-Kaoutar-Sabbahi.pdf';
-    link.download = 'CV-Kaoutar-Sabbahi.pdf';
+    link.href = '/Cv_KaoutarSabbahi.pdf';
+    link.download = 'Cv_KaoutarSabbahi.pdf';
     link.target = '_blank';
     document.body.appendChild(link);
     link.click();
