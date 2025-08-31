@@ -1,6 +1,18 @@
 import { Briefcase, Code, User } from "lucide-react";
 
 export const AboutSection = () => {
+  // Fonction pour gérer le téléchargement du CV
+  const handleDownloadCV = () => {
+    // Créer un lien temporaire pour le téléchargement
+    const link = document.createElement('a');
+    link.href = '/CV-Kaoutar-Sabbahi.pdf';
+    link.download = 'CV-Kaoutar-Sabbahi.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section id="about" className="py-24 px-4 relative">
       <div className="container mx-auto max-w-5xl">
@@ -15,7 +27,7 @@ export const AboutSection = () => {
             </h3>
 
             <p className="text-muted-foreground">
-              Je suis une ingénieure en informatique récemment diplômée de l’ENSA Khouribga, 
+              Je suis une ingénieure en informatique récemment diplômée de l'ENSA Khouribga, 
               passionnée par le développement logiciel et les technologies web & mobiles. 
               Je maîtrise un large éventail de technologies allant du <strong>front-end</strong> 
               (Angular, React, Bootstrap) au <strong>back-end</strong> 
@@ -24,9 +36,9 @@ export const AboutSection = () => {
             </p>
 
             <p className="text-muted-foreground">
-              J’ai réalisé plusieurs projets académiques et stages en entreprise, 
+              J'ai réalisé plusieurs projets académiques et stages en entreprise, 
               notamment sur des architectures <strong>microservices</strong>, 
-              la conception d’applications de gestion, et l’implémentation de solutions 
+              la conception d'applications de gestion, et l'implémentation de solutions 
               avec <strong>Docker, Keycloak, Jenkins, et RabbitMQ</strong>. 
               Mon objectif est de contribuer à des projets innovants tout en 
               continuant à évoluer dans un environnement stimulant.
@@ -37,13 +49,12 @@ export const AboutSection = () => {
                 Me Contacter
               </a>
 
-              <a
-                href="/CV-Kaoutar-Sabbahi.pdf"
-                download
+              <button
+                onClick={handleDownloadCV}
                 className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
                 Télécharger mon CV
-              </a>
+              </button>
             </div>
           </div>
 
@@ -56,26 +67,28 @@ export const AboutSection = () => {
                 <div className="text-left">
                   <h4 className="font-semibold text-lg">Développement Full Stack</h4>
                   <p className="text-muted-foreground">
-                    Expérience avec<strong> Spring Boot, JEE, Node.js, Angular, React</strong> et bases de données relationnelles et NoSQL.
+                    Expérience avec <strong>Spring Boot, JEE, Node.js, Angular, React</strong> et bases de données relationnelles et NoSQL.
                   </p>
                 </div>
               </div>
             </div>
+            
             <div className="gradient-border p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   <User className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                   <h4 className="font-semibold text-lg">UI/UX & Conception</h4>
+                  <h4 className="font-semibold text-lg">DevOps</h4>
                   <p className="text-muted-foreground">
-                    Conception avec <strong>Merise, UML</strong> et
-                    réalisation d’interfaces ergonomiques avec{" "}
-                    <strong>Bootstrap, TailwindCSS et Figma</strong>.
+                    Expérience avec <strong>Jenkins, Docker</strong> pour l'intégration et le déploiement 
+                    continus, ainsi que la gestion de projets avec{" "}
+                    <strong>Jira Software, Git et GitHub</strong>.
                   </p>
                 </div>
               </div>
             </div>
+            
             <div className="gradient-border p-6 card-hover">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
